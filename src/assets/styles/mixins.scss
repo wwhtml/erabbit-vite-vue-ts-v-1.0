@@ -1,0 +1,44 @@
+// 滚动条样式
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+  height: 1%;
+}
+
+@mixin ell-1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin ell-2 {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+//字体
+@mixin font($color, $size: 14px, $weight: 400) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+//
+// 鼠标经过上移阴影动画
+@mixin hoverShadow() {
+  transition: all 0.5s;
+  &:hover {
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+}
