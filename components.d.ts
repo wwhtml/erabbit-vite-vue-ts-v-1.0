@@ -5,12 +5,13 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module 'vue' {
+declare module "vue" {
   export interface GlobalComponents {
-    AppTopNav: typeof import('./src/components/app-top-nav.vue')['default']
-    ElBacktop: typeof import('element-plus/es')['ElBacktop']
-    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    AppPage: (typeof import("./src/components/app-page.vue"))["default"];
+    AppTopNav: (typeof import("./src/components/app-top-nav.vue"))["default"];
+    ElBacktop: (typeof import("element-plus/es"))["ElBacktop"];
+    ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
+    RouterLink: (typeof import("vue-router"))["RouterLink"];
+    RouterView: (typeof import("vue-router"))["RouterView"];
   }
 }
