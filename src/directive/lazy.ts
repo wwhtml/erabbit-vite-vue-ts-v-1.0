@@ -1,37 +1,37 @@
-import type { Directive, DirectiveBinding } from 'vue'
+import type { Directive, DirectiveBinding } from "vue";
 
-import defaultImg from '../assets/images/200.png'
+import defaultImg from "../assets/images/200.png";
 
 const lazy: Directive = {
   // vue2.0 监听使用指令的DOM是否创建好，钩子函数：inserted
   // vue3.0 的指令拥有的钩子函数和组件的一样，使用指令的DOM是否创建好，钩子函数：mounted
   mounted(el, binding) {
     //设置懒加载图片
-    el.src = defaultImg
+    el.src = defaultImg;
     // 2. 创建一个观察对象，来观察当前使用指令的元素
     const observe = new IntersectionObserver(
       ([{ isIntersecting }]) => {
         if (isIntersecting) {
           // 停止观察
-          observe.unobserve(el)
+          observe.unobserve(el);
           // 3. 把指令的值设置给el的src属性 binding.value就是指令的值
           // 4. 处理图片加载失败 error 图片加载失败的事件 load 图片加载成功
           el.onerror = () => {
             // 加载失败，设置默认图
-            el.src = defaultImg
-          }
+            el.src = defaultImg;
+          };
           //绑定真实图片地址
-          el.src = binding.value
+          el.src = binding.value;
         }
       },
       {
         threshold: 0
       }
-    )
+    );
     // 开启观察
-    observe.observe(el)
+    observe.observe(el);
   }
-}
+};
 
 // // 定义指令
 // const defineDirective = (app) => {
@@ -69,4 +69,4 @@ const lazy: Directive = {
 //   })
 // }
 
-export default lazy
+export default lazy;
