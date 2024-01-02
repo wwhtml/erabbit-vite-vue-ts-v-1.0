@@ -8,6 +8,7 @@ import router from "./router";
 import directive from "@/directive/index";
 
 const app = createApp(App);
+// AudioParamMap
 
 app.use(createPinia());
 app.use(router);
