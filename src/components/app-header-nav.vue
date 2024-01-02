@@ -60,6 +60,7 @@ const categoryId = ref();
       position: absolute;
       top: 56px;
       left: -200px;
+      z-index: 999;
       width: 1240px;
       height: 0;
       padding: 0 70px;
