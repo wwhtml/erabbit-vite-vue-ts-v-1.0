@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import HomePanel from "./home-panel.vue";
 import { getBrand } from "@/api/home/index";
-import { useIntersectionObserver } from "@vueuse/core";
 
 import { useLazyData } from "@/hooks";
 
