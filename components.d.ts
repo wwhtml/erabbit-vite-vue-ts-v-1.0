@@ -17,6 +17,7 @@ declare module 'vue' {
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
     ElImage: typeof import('element-plus/es')['ElImage']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ErSkeleton: typeof import('./src/components/er-skeleton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
