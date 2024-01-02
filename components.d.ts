@@ -7,6 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppHeader: typeof import('./src/components/app-header.vue')['default']
+    AppHeaderNav: typeof import('./src/components/app-header-nav.vue')['default']
+    AppHeaderSticky: typeof import('./src/components/app-header-sticky.vue')['default']
     AppPage: typeof import('./src/components/app-page.vue')['default']
     AppTopNav: typeof import('./src/components/app-top-nav.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
