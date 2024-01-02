@@ -1,5 +1,8 @@
 import { defineStore } from "pinia";
 import { getAllCategory } from "@/api/home/index";
+import { topCategory } from "@/api/constants";
+
+const topHead = topCategory.map((item: string) => ({ name: item, id: item }));
 
 interface CategoryState {
   list?: Category[];
@@ -8,7 +11,7 @@ interface CategoryState {
 export const useCategoryStore = defineStore("category", {
   state: (): CategoryState => {
     return {
-      list: []
+      list: topHead
     };
   },
   actions: {

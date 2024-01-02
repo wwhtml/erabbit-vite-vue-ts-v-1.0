@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const categoryStore = useCategoryStore()
-const { list } = storeToRefs(categoryStore)
+const categoryStore = useCategoryStore();
+const { list } = storeToRefs(categoryStore);
 
-const categoryId = ref()
+const categoryId = ref();
 
 const currCategory = computed(() => {
-  return list?.value?.find((item) => item.id === categoryId.value)
-})
+  return list?.value?.find((item) => item.id === categoryId.value);
+});
 </script>
 
 <template>
