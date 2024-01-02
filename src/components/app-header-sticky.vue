@@ -24,6 +24,7 @@
   height: 80px;
   background-color: #fff;
   border-bottom: 1px solid #e4e4e4;
+  z-index: 999;
   .container {
     display: flex;
     align-items: center;
