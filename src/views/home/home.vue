@@ -1,11 +1,13 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="home">home</div>
+  <div class="home">
+    <div class="container">home</div>
+  </div>
 </template>
 
 <style scoped lang="scss">
 .home {
-  min-height: 2000px;
+  min-height: 12000px;
 }
 </style>

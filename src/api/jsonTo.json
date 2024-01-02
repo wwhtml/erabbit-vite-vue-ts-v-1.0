@@ -1,0 +1,30 @@
+interface RootObject {
+  msg: string;
+  result: Result[];
+}
+
+interface Category {
+  id: string;
+  name: string;
+  picture: string;
+  children: Child[];
+  goods: Good[];
+}
+
+interface Good {
+  id: string;
+  name: string;
+  desc: string;
+  price: string;
+  picture: string;
+  discount?: any;
+  orderNum?: any;
+}
+
+interface Child {
+  id: string;
+  name: string;
+  picture: string;
+  children?: any;
+  goods?: any;
+}
