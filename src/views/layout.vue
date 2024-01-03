@@ -20,6 +20,7 @@ const handlePageScroll = ({ scrollTop }: { scrollLeft: number; scrollTop: number
       <div class="main">
         <router-view></router-view>
       </div>
+      <app-footer></app-footer>
     </div>
   </app-page>
 </template>

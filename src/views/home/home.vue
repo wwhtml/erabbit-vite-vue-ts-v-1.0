@@ -26,7 +26,7 @@ import HomeSpecial from "./home-special.vue";
 
 <style scoped lang="scss">
 .home {
-  min-height: 12000px;
+  min-height: 1000px;
   .enter {
     height: 500px;
     background-color: #f5f5f5;
