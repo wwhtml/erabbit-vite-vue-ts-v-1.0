@@ -1,16 +1,17 @@
 <script lang="ts" setup>
+const route = useRoute();
 const categoryStore = useCategoryStore();
 const { list } = storeToRefs(categoryStore);
-
 const categoryId = ref();
 </script>
 
 <template>
   <ul class="app-header-nav">
-    <li><span>首页</span></li>
+    <li><span @click="$router.push(`/home`)">首页</span></li>
     <li
       v-for="item in list"
       :key="item.id"
+      :class="{ active: $route.params.id == item.id }"
       @mousemove="
         () => {
           categoryId = item.id;
@@ -22,9 +23,9 @@ const categoryId = ref();
         }
       "
     >
-      <span @click="$router.push(`/category/${item.id}`)">{{ item.name }}</span>
+      <span @click="$router.push(`/category/1/${item.id}`)">{{ item.name }}</span>
       <ul class="layer" :class="{ open: categoryId == item.id }">
-        <li v-for="c in item.children" :key="c.id" @click="$router.push(`/category/sub/${c.id}`)">
+        <li v-for="c in item.children" :key="c.id" @click="$router.push(`/category/2/${c.id}`)">
           <img :src="c.picture" alt="" />
           <p>{{ c.name }}</p>
         </li>
@@ -45,6 +46,12 @@ const categoryId = ref();
 
   & > li {
     margin-right: 40px;
+    &.active {
+      span {
+        color: $active-color;
+        border-color: $active-color;
+      }
+    }
     > span {
       display: block;
       border-bottom: 1px solid transparent;

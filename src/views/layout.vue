@@ -1,28 +1,31 @@
 <script lang="ts" setup>
+import { useWindowScroll } from "@vueuse/core";
+const { y } = useWindowScroll();
+
 const categoryStore = useCategoryStore();
 categoryStore.getCategoryLsit();
 
 const top = ref();
-const handlePageScroll = ({ scrollTop }: { scrollLeft: number; scrollTop: number }) => {
-  top.value = scrollTop;
-};
+// const handlePageScroll = ({ scrollTop }: { scrollLeft: number; scrollTop: number }) => {
+//   top.value = scrollTop;
+// };
 </script>
 
 <template>
-  <app-page @scroll="handlePageScroll">
-    <div class="layout">
-      <app-top-nav></app-top-nav>
-      <app-header></app-header>
-      <Transition name="fade">
-        <app-header-sticky v-show="top > 70"></app-header-sticky>
-      </Transition>
+  <!-- <app-page @scroll="handlePageScroll"> -->
+  <div class="layout">
+    <app-top-nav></app-top-nav>
+    <app-header></app-header>
+    <Transition name="fade">
+      <app-header-sticky v-show="y > 70"></app-header-sticky>
+    </Transition>
 
-      <div class="main">
-        <router-view></router-view>
-      </div>
-      <app-footer></app-footer>
+    <div class="main">
+      <router-view></router-view>
     </div>
-  </app-page>
+    <app-footer></app-footer>
+  </div>
+  <!-- </app-page> -->
 </template>
 
 <style scoped lang="scss">
